@@ -1,0 +1,30 @@
+{
+  "name": "group-project-two",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mbogaert/group-project-two.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mbogaert/group-project-two/issues"
+  },
+  "homepage": "https://github.com/Mbogaert/group-project-two#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.6",
+    "heroku": "^7.47.7",
+    "mysql2": "^2.2.5"
+  }
+}
