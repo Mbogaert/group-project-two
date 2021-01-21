@@ -2,12 +2,13 @@
     <h2>
         Your Matches
     </h2>
-    {{!-- This will be moved into a partial --}}
-    <article class="dog-match">
-        {{!-- somehow filter the results of the dogs to those that match the clicked on dog --}}
-        <div>
-        Dog: {{name}} Owner: {{person.name}} <br>
-        Contact: {{person.email}}
-        </div>
-    </article>
+    {{!-- filter the blog posts in your area --}}
+    <ul class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info.post }}
+        </li>
+        {{/each}}
+    </ul>
+
 </section>
