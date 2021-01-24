@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Dog } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
-router.dog('/add-dog', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   Dog.create({ dog_name: req.body.dog_name, characteristic: req.body.characteristic, user_id: req.session.user_id })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {

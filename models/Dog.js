@@ -31,7 +31,7 @@ Dog.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'survey'
+    modelName: 'dog'
   }
 );
 

@@ -6,9 +6,7 @@ const Match = require('./Match');
 
 User.hasMany(Post, { foreignKey: 'user_id' });
 
-User.hasMany(Match, { foreignKey: 'characteristic' })
-
-Match.hasMany(User, { foreignKey: 'characteristic' })
+User.hasMany(Match, { foreignKey: 'user_id' })
 
 Dog.belongsTo(User, { foreignKey: 'user_id' });
 
