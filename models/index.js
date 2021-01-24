@@ -2,33 +2,24 @@ const Post = require('./Post');
 const User = require('./User');
 const Comment = require('./Comment');
 const Dog = require('./Dog');
+const Match = require('./Match');
 
-User.hasMany(Post, {
-  foreignKey: 'user_id'
-});
+User.hasMany(Post, { foreignKey: 'user_id' });
 
-Dog.belongsTo(User, {
-  foreignKey: 'user_id',
-});
+User.hasMany(Match, { foreignKey: 'characteristic' })
 
-Post.belongsTo(User, {
-  foreignKey: 'user_id',
-});
+Match.hasMany(User, { foreignKey: 'characteristic' })
 
-Comment.belongsTo(User, {
-  foreignKey: 'user_id',
-});
+Dog.belongsTo(User, { foreignKey: 'user_id' });
 
-Comment.belongsTo(Post, {
-  foreignKey: 'post_id',
-});
+Post.belongsTo(User, { foreignKey: 'user_id' });
 
-User.hasMany(Comment, {
-  foreignKey: 'user_id',
-});
+Comment.belongsTo(User, { foreignKey: 'user_id' });
 
-Post.hasMany(Comment, {
-  foreignKey: 'post_id',
-});
+Comment.belongsTo(Post, { foreignKey: 'post_id' });
 
-module.exports = { User, Post, Comment, Dog };
+User.hasMany(Comment, { foreignKey: 'user_id' });
+
+Post.hasMany(Comment, { foreignKey: 'post_id' });
+
+module.exports = { User, Post, Comment, Dog, Match };
