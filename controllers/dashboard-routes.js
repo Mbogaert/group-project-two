@@ -118,14 +118,21 @@ router.get('/create/', withAuth, (req, res) => {
     });
 });
 
+router.get("/new-post", (req, res) => { 
+  res.render('new-post');
+  // to be updated once we have models made + replace with above code once we have the login working
+});
+
 router.get("/add-dog", (req, res) => {
     res.render('add-dog');
     // to be updated once we have models made
+    // will add withAuth and login stuff once that page is connected
 });
 
-// router.get("/results", (req, res) => {
-//     res.render('results');
-//  // to be updated
-// });
+router.get("/results", (req, res) => {
+    res.render('results');
+ // to be updated
+ // will add withAuth and login stuff once that page is connected
+});
 
 module.exports = router;
