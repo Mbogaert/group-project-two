@@ -11,6 +11,10 @@ Dog.init(
       primaryKey: true,
       autoIncrement: true
     },
+    dog_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     characteristic: {
       type: DataTypes.STRING,
       allowNull: false
