@@ -15,7 +15,15 @@ Dog.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    characteristic: {
+    energy: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    vaccine: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    human_interaction: {
       type: DataTypes.STRING,
       allowNull: false
     },

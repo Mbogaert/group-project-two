@@ -1,45 +1,13 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, (req, res) => {
-  Post.findAll({
-    where: {
-      user_id: req.session.user_id
-    },
-    attributes: [
-      'id',
-      'title',
-      'created_at',
-      'content'
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+router.get('/', (req, res) => {
+    res.render('dashboard');
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/edit/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -82,7 +50,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-router.get('/create/', withAuth, (req, res) => {
+router.get('/create/', (req, res) => {
   Post.findAll({
     where: {
       user_id: req.session.user_id
