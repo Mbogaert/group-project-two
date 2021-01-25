@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars');
 const User = require('./User')
 const Post = require('./Post')
 const Comment = require('./Comment');
+const Dog = require('./Dog');
 
 User.hasMany(Post, {
     foreignKey: 'user_id',
