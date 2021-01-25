@@ -1,13 +1,41 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
-// const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    res.render('dashboard');
+  Post.findAll({
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'content'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
+      res.render('homepage', { posts, loggedIn: req.session.loggedIn });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -34,51 +62,12 @@ router.get('/edit/:id', (req, res) => {
     ]
   })
     .then(dbPostData => {
-      if (dbPostData) {
-        const post = dbPostData.get({ plain: true });
-
-        res.render('edit-post', {
-          post,
-          loggedIn: true
-        });
-      } else {
-        res.status(404).end();
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
       }
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
-
-router.get('/create/', (req, res) => {
-  Post.findAll({
-    where: {
-      user_id: req.session.user_id
-    },
-    attributes: [
-      'id',
-      'title',
-      'created_at',
-      'content'
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('create-post', { posts, loggedIn: true });
+      const post = dbPostData.get({ plain: true });
+      res.render('single-post', { post, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
       console.log(err);
@@ -86,21 +75,22 @@ router.get('/create/', (req, res) => {
     });
 });
 
-router.get("/new-post", (req, res) => { 
-  res.render('new-post');
-  // to be updated once we have models made + replace with above code once we have the login working
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
 });
 
-router.get("/add-dog", (req, res) => {
-    res.render('add-dog');
-    // to be updated once we have models made
-    // will add withAuth and login stuff once that page is connected
-});
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
 
-router.get("/results", (req, res) => {
-    res.render('results');
- // to be updated
- // will add withAuth and login stuff once that page is connected
+  res.render('signup');
 });
 
 module.exports = router;
