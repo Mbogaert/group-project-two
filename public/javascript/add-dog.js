@@ -17,7 +17,7 @@ async function addDogHandler(event) {
             }),
             headers: { "Content-Type": "application/json" },
         });
-
+            // need to make it so it alerts the user if they don't submit properly and reroute to matches
         if (response.ok) {
             console.log("success");
             document.location.replace(`/dashboard/results`);

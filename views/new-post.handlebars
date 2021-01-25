@@ -1,17 +1,24 @@
-<section>
-  <h3>Create New Post</h3>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+<section class="container">
+  <div class="row">
+    <div class="is-half">
+      <h3>Create New Post</h3>
+  <br>
+      <form class="new-post-form">
+        <div>
+          <label for="post-title" class="label">Title</label>
+          <input class="input" type="text" id="post-title" name="post-title" placeholder="Where and when do you want to meet should go here"/>
+        </div>
+        <br>
+        <div>
+          <label for="post-content" class="label">Content</label>
+          <input class="input" id="post-content" name="post-content" placeholder="details about your playdate should go here!"/>
+        </div>
+        {{!-- something where they select which dog this is for (after MVP maybe) --}}
+        <br>
+        <button type="submit" class="button is-success">Submit</button>
+      </form>
     </div>
-    <div>
-      <label for="post-content">Content</label>
-      <input id="post-content" name="post-content" />
-    </div>
-    <button type="submit" class="btn">Submit</button>
-  </form>
+  </div>
 </section>
 
 <script src="/javascript/add-post.js"></script>

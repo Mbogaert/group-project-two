@@ -11,28 +11,44 @@
 </head>
 
 <body>
-    <div>
-        <header>
-            <h1>
-                <a href="/">Plenty of Pups</a>
-            </h1>
-            <nav>
+    <nav class="navbar has-background-info" role="navigation" aria-label="main navigation">
+
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item"><strong>Plenty of Pups</strong></a>
+
                 {{!-- {{#if loggedIn}} --}}
-                <a href="/dashboard">Your Profile</a>
-                <a href="/dashboard/add-dog">Add Dog</a>
-                <a href="/dashboard/results">Dog Date Matches</a>
-                <button id="logout" class="btn-no-style">Logout</button>
-                {{!-- {{/if}} --}}
-            </nav>
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer>
-            Some sort of footer here... made by....
-        </footer>
+                <a href="/dashboard" class="navbar-item">Your Profile</a>
+                <a href="/dashboard/add-dog" class="navbar-item">Add Dog</a>
+                <a href="/dashboard/results" class="navbar-item">Dog Date Matches</a>
+                
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-light" id="logout">Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{!-- {{/if}} --}}
+        </div>
+    </nav>
+    <br>
+    <main>
+        {{{ body }}}
+    </main>
+    <br>
+    <footer class="footer has-background-info">
+        <div class="content has-text-centered has-text-white">
+        <strong>We hope you enjoy your dog dates!</strong> <br>
+        Made by: Emily, James, Jonah, Mat and Riley
+        </div>
+    </footer>
     </div>
     {{!-- {{#if loggedIn}} --}}
-    {{!-- <script src="/javascript/logout.js"></script> --}}
+    {{!--
+    <script src="/javascript/logout.js"></script> --}}
     {{!-- {{/if}} --}}
 </body>
