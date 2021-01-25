@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Mbogaert/group-project-two#readme",
   "dependencies": {
+    "bulma": "^0.9.1",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.1.0",
     "dotenv": "^8.2.0",
