@@ -1,3 +1,24 @@
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('user_0qrkcuvbvVBCciRDXIACi');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('send-email').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('plenty_of_pups', 'plenty_of_pups_welcome', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+
 <div class="container">
     <div class="row">
         <div class="is-half">
@@ -34,7 +55,7 @@
             </div>
         </div>
         </form>
-        <form class="signup-form">
+        <form class="signup-form" id="send-email">
         <div class="is-half">
             <h2>Register here</h2>
             <div class="field">
@@ -84,4 +105,4 @@
     </div>
 </div>
 
-<script src="/javascript/register.js"></script>
+<script src="/javascript/loginRegister.js"></script>
