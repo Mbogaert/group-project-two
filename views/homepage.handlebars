@@ -1,11 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="is-half">
+            <form class="login-form">
             <h2>Login here</h2>
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control has-icons-left">
-                    <input type="email" name="email" class="input" placeholder="Enter your email">
+                    <input id="email-login" type="email" name="email" class="input" placeholder="Enter your email">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelop"></i>
                     </span>
@@ -14,7 +15,7 @@
             <div class="field">
                 <label class="label">Password</label>
                 <div class="control">
-                    <input type="password" name="password" class="input" placeholder="Password">
+                    <input id="password-login" type="password" name="password" class="input" placeholder="Password">
                     <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
@@ -32,12 +33,14 @@
                 </p>
             </div>
         </div>
+        </form>
+        <form class="signup-form">
         <div class="is-half">
             <h2>Register here</h2>
             <div class="field">
                 <label class="label">Username</label>
                 <div class="control has-icons-left">
-                    <input type="username" name="username" class="input" placeholder="Valid Username">
+                    <input id="username-signup" type="username" name="username" class="input" placeholder="Valid Username">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelop"></i>
                     </span>
@@ -46,7 +49,7 @@
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control has-icons-left">
-                    <input type="email" name="email" class="input" placeholder="Valid Email">
+                    <input id="email-signup" type="email" name="email" class="input" placeholder="Valid Email">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelop"></i>
                     </span>
@@ -55,13 +58,13 @@
             <div class="field">
                 <label class="label">Password</label>
                 <div class="control">
-                    <input type="password" name="password" class="input" placeholder="Password">
+                    <input id="password-signup" type="password" name="password" class="input" placeholder="Password">
                     <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
                 </div>
             </div>
-            <div class="field">
+            {{!-- <div class="field">
                 <label class="label">Confirm password</label>
                 <div class="control">
                     <input type="password" name="passwordConfirm" class="input" placeholder="Password again">
@@ -69,12 +72,16 @@
                         <i class="fas fa-lock"></i>
                     </span>
                 </div>
-            </div>
+            </div> --}}
             <div class="field">
                 <p class="control">
-                   <a href="/" ><button class="button is-success">Register now</button></a>
+                   <a href="/dashboard" ><button class="button is-success">Register now</button></a>
                 </p>
             </div>
+            
         </div>
+        </form>
     </div>
 </div>
+
+<script src="/javascript/register.js"></script>
