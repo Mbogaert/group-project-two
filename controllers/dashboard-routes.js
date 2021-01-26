@@ -149,10 +149,14 @@ router.get("/in-between", (req, res) => {
       }
     ]
   })
-    .then(result => res.json(result))
-    .catch(err => {
-      res.status(500).json(err);
+    .then(result => {
+      const posts = result.map(post => post.get({ plain: true }));
+      res.render('in-between', { posts });
     })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.get("/mellow", (req, res) => {
@@ -182,10 +186,14 @@ router.get("/mellow", (req, res) => {
       }
     ]
   })
-    .then(result => res.json(result))
-    .catch(err => {
-      res.status(500).json(err);
+    .then(result => {
+      const posts = result.map(post => post.get({ plain: true }));
+      res.render('mellow', { posts });
     })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
