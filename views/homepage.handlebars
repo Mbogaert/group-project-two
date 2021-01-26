@@ -1,11 +1,33 @@
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('user_0qrkcuvbvVBCciRDXIACi');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('send-email').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('plenty_of_pups', 'plenty_of_pups_welcome', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+
 <div class="container">
     <div class="row">
         <div class="is-half">
+            <form class="login-form">
             <h2>Login here</h2>
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control has-icons-left">
-                    <input type="email" name="email" class="input" placeholder="Enter your email">
+                    <input id="email-login" type="email" name="email" class="input" placeholder="Enter your email">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelop"></i>
                     </span>
@@ -14,7 +36,7 @@
             <div class="field">
                 <label class="label">Password</label>
                 <div class="control">
-                    <input type="password" name="password" class="input" placeholder="Password">
+                    <input id="password-login" type="password" name="password" class="input" placeholder="Password">
                     <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
@@ -32,12 +54,14 @@
                 </p>
             </div>
         </div>
+        </form>
+        <form class="signup-form" id="send-email">
         <div class="is-half">
             <h2>Register here</h2>
             <div class="field">
                 <label class="label">Username</label>
                 <div class="control has-icons-left">
-                    <input type="username" name="username" class="input" placeholder="Valid Username">
+                    <input id="username-signup" type="username" name="username" class="input" placeholder="Valid Username">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelop"></i>
                     </span>
@@ -46,7 +70,7 @@
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control has-icons-left">
-                    <input type="email" name="email" class="input" placeholder="Valid Email">
+                    <input id="email-signup" type="email" name="email" class="input" placeholder="Valid Email">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelop"></i>
                     </span>
@@ -55,13 +79,13 @@
             <div class="field">
                 <label class="label">Password</label>
                 <div class="control">
-                    <input type="password" name="password" class="input" placeholder="Password">
+                    <input id="password-signup" type="password" name="password" class="input" placeholder="Password">
                     <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
                 </div>
             </div>
-            <div class="field">
+            {{!-- <div class="field">
                 <label class="label">Confirm password</label>
                 <div class="control">
                     <input type="password" name="passwordConfirm" class="input" placeholder="Password again">
@@ -69,12 +93,16 @@
                         <i class="fas fa-lock"></i>
                     </span>
                 </div>
-            </div>
+            </div> --}}
             <div class="field">
                 <p class="control">
-                   <a href="/" ><button class="button is-success">Register now</button></a>
+                   <a href="/dashboard" ><button class="button is-success">Register now</button></a>
                 </p>
             </div>
+            
         </div>
+        </form>
     </div>
 </div>
+
+<script src="/javascript/loginRegister.js"></script>
