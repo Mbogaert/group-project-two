@@ -19,6 +19,26 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    dog_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    energy: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    vaccine: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    human_interaction: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    breed: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
   Post.findAll({
@@ -72,8 +71,13 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   Post.create({
+    dog_name: req.body.dog_name,
+    breed: req.body.breed,
+    energy: req.body.energy,
+    vaccine: req.body.vaccine,
+    human_interaction: req.body.human_interaction,
     title: req.body.title,
     content: req.body.content,
     user_id: req.session.user_id
@@ -85,7 +89,7 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
   Post.update({
     title: req.body.title,
     content: req.body.content
@@ -108,7 +112,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id
