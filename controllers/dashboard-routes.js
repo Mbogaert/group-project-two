@@ -112,10 +112,14 @@ router.get("/high-energy", (req, res) => {
       }
     ]
   })
-    .then(result => res.json(result))
-    .catch(err => {
-      res.status(500).json(err);
+    .then(result => {
+      const posts = result.map(post => post.get({ plain: true }));
+      res.render('high-energy', { posts });
     })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.get("/in-between", (req, res) => {
