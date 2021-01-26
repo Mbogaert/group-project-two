@@ -85,4 +85,107 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
+router.get("/high-energy", (req, res) => {
+  Post.findAll({
+    where: {
+      energy: 'High Energy'
+    },
+    attributes: [
+      'id',
+      'title',
+      'content',
+      'dog_name',
+      'energy'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(result => {
+      const posts = result.map(post => post.get({ plain: true }));
+      res.render('high-energy', { posts });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/in-between", (req, res) => {
+  Post.findAll({
+    where: {
+      energy: 'In between'
+    },
+    attributes: [
+      'id',
+      'title',
+      'content',
+      'dog_name',
+      'energy'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(result => res.json(result))
+    .catch(err => {
+      res.status(500).json(err);
+    })
+});
+
+router.get("/mellow", (req, res) => {
+  Post.findAll({
+    where: {
+      energy: 'Mellow'
+    },
+    attributes: [
+      'id',
+      'title',
+      'content',
+      'dog_name',
+      'energy'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(result => res.json(result))
+    .catch(err => {
+      res.status(500).json(err);
+    })
+});
+
 module.exports = router;
