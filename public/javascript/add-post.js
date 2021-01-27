@@ -21,7 +21,6 @@ async function newFormHandler(event) {
         vaccine = rb.value;
       }
     };
-
   const allHuman_interaction = document.querySelectorAll('input[name="interaction"]');
   let human_interaction;
     for (const rb of allHuman_interaction) {
@@ -30,28 +29,28 @@ async function newFormHandler(event) {
       }
     };
 
-  // const response = await fetch(`/api/posts`, {
-  //   method: 'POST',
-  //   body: JSON.stringify({
-  //     dog_name,
-  //     breed,
-  //     energy,
-  //     vaccine,
-  //     human_interaction,
-  //     title,
-  //     content
-  //   }),
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   }
-  // });
+  const response = await fetch(`/api/posts`, {
+    method: 'POST',
+    body: JSON.stringify({
+      dog_name,
+      breed,
+      energy,
+      vaccine,
+      human_interaction,
+      title,
+      content
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
 
-  // if (response.ok) {
-  //   document.location.replace('/dashboard/results');
+  if (response.ok) {
+    document.location.replace('/dashboard/results');
     console.log(dog_name, energy, vaccine, human_interaction);
-  // } else {
-  //   alert(response.statusText);
-  // }
+  } else {
+    alert(response.statusText);
+  }
 }
 
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
