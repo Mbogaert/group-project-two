@@ -3,14 +3,13 @@ async function newFormHandler(event) {
 
   const dog_name = document.querySelector('#dog-name').value.trim();
   const breed = document.querySelector('#dog-breed').value.trim();
-  let energy = document.querySelectorAll('input[name="dog-energy"]').value;
+  let energy = document.querySelectorAll('input[name="dog-energy"]');
   if (document.getElementById('high-energy').checked) {
-    energy = 'high-energy';
+    energy = document.getElementById('high-energy').value;
   } else if (document.getElementById('in-between').checked) {
-    energy = 'in-between';
+    energy = document.getElementById('in-between').value;
   } else if (document.getElementById('mellow').checked) {
-    energy = 'mellow';
-  };
+    energy = document.getElementById('mellow').value; } 
   const vaccine = document.querySelectorAll('input[name="dog-vacc"]').value;
   const human_interaction = document.querySelectorAll('input[name="interaction"]').value;
   const title = document.querySelector('input[name="post-title"]').value;
@@ -33,7 +32,8 @@ async function newFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard/results');
+    // document.location.replace('/dashboard/results');
+    console.log(dog_name, energy, energyChecked);
   } else {
     alert(response.statusText);
   }
