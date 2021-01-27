@@ -47,7 +47,6 @@ async function newFormHandler(event) {
 
   if (response.ok) {
     document.location.replace('/dashboard/results');
-    console.log(dog_name, energy, vaccine, human_interaction);
   } else {
     alert(response.statusText);
   }
