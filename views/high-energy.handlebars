@@ -1,0 +1,16 @@
+<section class="container">
+    <div class="row">
+        <div class="is-half">
+    <h2 class="label">High Energy</h2>
+    {{!-- filter the posts with your dog characteristics  --}}
+    <ul class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post }}
+        </li>
+        {{/each}}
+    </ul>
+    </div>
+    </div>
+    <div><a href="/dashboard/"><button class="button is-success" type="submit">Back to Dash</button></a></div>
+</section>
