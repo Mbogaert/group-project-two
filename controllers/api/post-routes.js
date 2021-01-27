@@ -8,13 +8,7 @@ router.get('/', (req, res) => {
       'id',
       'title',
       'created_at',
-      'content',
-      'dog_name',
-      'energy',
-      'vaccine',
-      'human_interaction',
-      'breed',
-      'user_id'
+      'content'
     ],
     include: [
       {
@@ -47,13 +41,7 @@ router.get('/:id', (req, res) => {
       'id',
       'title',
       'created_at',
-      'content',
-      'dog_name',
-      'energy',
-      'vaccine',
-      'human_interaction',
-      'breed',
-      'user_id'
+      'content'
     ],
     include: [
       {
