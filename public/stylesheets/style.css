@@ -17,13 +17,31 @@ nav {
   font-size: 25px;
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: black;
+}
+
+.new-post-title {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-size: 35px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #forms {
   width: 25%;
   margin-left: 37.5%;
-  color: #556b2f;
-  background-color: #6b8e23;
+  color: white;
+  background-color: white;
+  padding: 20px;
+  border: solid 3px #556b2f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+.new-post-form {
+  color: black;
+  background-color: white;
   padding: 20px;
   border: solid 3px #556b2f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -47,4 +65,5 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  color: black;
 }
