@@ -48,6 +48,15 @@ nav {
   border-radius: 15px;
 }
 
+/* Fix form orientation */
+.inlineBlock {
+  display: inline-block;
+}
+
+.autoWidth {
+  width: 0 auto;
+}
+
 html,
 body,
 header {
@@ -65,3 +74,4 @@ footer {
   width: 100%;
   color: black;
 }
+
