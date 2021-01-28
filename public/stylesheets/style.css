@@ -30,6 +30,15 @@ nav {
   border-radius: 15px;
 }
 
+/* Fix form orientation */
+.inlineBlock {
+  display: inline-block;
+}
+
+.autoWidth {
+  width: 0 auto;
+}
+
 html,
 body,
 header {
@@ -43,8 +52,10 @@ header {
 #content {
   padding-bottom: 130px;
 } /* FOOTER HEIGHT */
-footer {
+.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  padding: 3rem 1.5rem 1rem!important;
 }
+
