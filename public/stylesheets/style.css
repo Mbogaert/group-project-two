@@ -62,8 +62,6 @@ header {
   padding-bottom: 130px;
 } /* FOOTER HEIGHT */
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   color: black;
 }
