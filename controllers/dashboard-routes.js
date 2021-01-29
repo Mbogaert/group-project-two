@@ -3,10 +3,12 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// these open routes may need to be addressed
 router.get('/', withAuth, (req, res) => {
   res.render('dashboard')
 });
 
+// these open routes may need to be addressed
 router.get("/new-post", withAuth, (req, res) => {
   res.render('new-post');
 });
