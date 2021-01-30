@@ -1,16 +1,19 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+// these open routes may need to be addressed
+router.get('/', withAuth, (req, res) => {
   res.render('dashboard')
 });
 
-router.get("/new-post", (req, res) => {
+// these open routes may need to be addressed
+router.get("/new-post", withAuth, (req, res) => {
   res.render('new-post');
 });
 
-router.get("/results", (req, res) => {
+router.get("/results", withAuth, (req, res) => {
   Post.findAll({
     attributes: [
       'id',
@@ -36,7 +39,7 @@ router.get("/results", (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('results', { posts });
+      res.render('results', { posts, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -44,7 +47,7 @@ router.get("/results", (req, res) => {
     });
 });
 
-router.get('/post/:id', (req, res) => {
+router.get('/post/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -77,7 +80,7 @@ router.get('/post/:id', (req, res) => {
         return;
       }
       const post = dbPostData.get({ plain: true });
-      res.render('single-post', { post });
+      res.render('single-post', { post, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -85,7 +88,7 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
-router.get("/high-energy", (req, res) => {
+router.get("/high-energy", withAuth, (req, res) => {
   Post.findAll({
     where: {
       energy: 'High Energy'
@@ -114,7 +117,7 @@ router.get("/high-energy", (req, res) => {
   })
     .then(result => {
       const posts = result.map(post => post.get({ plain: true }));
-      res.render('high-energy', { posts });
+      res.render('high-energy', { posts, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -122,7 +125,7 @@ router.get("/high-energy", (req, res) => {
     });
 });
 
-router.get("/in-between", (req, res) => {
+router.get("/in-between", withAuth, (req, res) => {
   Post.findAll({
     where: {
       energy: 'In between'
@@ -151,7 +154,7 @@ router.get("/in-between", (req, res) => {
   })
     .then(result => {
       const posts = result.map(post => post.get({ plain: true }));
-      res.render('in-between', { posts });
+      res.render('in-between', { posts, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -159,7 +162,7 @@ router.get("/in-between", (req, res) => {
     });
 });
 
-router.get("/mellow", (req, res) => {
+router.get("/mellow", withAuth, (req, res) => {
   Post.findAll({
     where: {
       energy: 'Mellow'
@@ -188,7 +191,7 @@ router.get("/mellow", (req, res) => {
   })
     .then(result => {
       const posts = result.map(post => post.get({ plain: true }));
-      res.render('mellow', { posts });
+      res.render('mellow', { posts, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
