@@ -1,4 +1,32 @@
-<article class="dog-match">
+<div class="container has-text-centered">
+    <div class="column is-centered">
+        <div class="column is-4">
+            <div class="card">
+                <div class="content">
+                    <p class="title is-4"> {{dog_name}} </p>
+                    <p class="subtitle">Looking For: {{content}}</p>
+                </div>
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <p class="title is-6"> Owner: {{user.username}} </p>
+                </div>
+                <div class="card-header">
+                    <p class="title is-6">{{dog_name}}'s Info</p>
+                </div>
+                <div class="content">
+                    <p>Breed: {{breed}}</p>
+                    <p>Energy Level: {{energy}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- <article class="dog-match">
     <div>
         Dog: {{dog_name}} Energy: {{energy}} Owner: {{user.username}} <br>
         <a href="post/{{id}}">{{title}}</a>
@@ -6,4 +34,4 @@
     <div>
         {{content}}
     </div>
-</article>
+</article> --}}
