@@ -5,12 +5,12 @@ const withAuth = require('../utils/auth');
 
 // these open routes may need to be addressed
 router.get('/', withAuth, (req, res) => {
-  res.render('dashboard')
+  res.render('dashboard', { loggedIn: true })
 });
 
 // these open routes may need to be addressed
 router.get("/new-post", withAuth, (req, res) => {
-  res.render('new-post');
+  res.render('new-post', { loggedIn: true });
 });
 
 router.get("/results", withAuth, (req, res) => {
