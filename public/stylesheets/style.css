@@ -5,10 +5,12 @@
 }
 
 body {
-  background-image: url(../images/paws.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/paws.jpg);
+
   display: flex;
   flex-direction: column; /* creates rows out of the elements main and footer */
-  height: 100vh;
+  height: 100%;
   margin: 0;
 }
 
@@ -25,6 +27,18 @@ main {
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: white;
+}
+
+.homepage-title {
+  text-align: center;
+  font-size: 45px;
+  font-weight: bolder;
+}
+
+.site-info {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .new-post-title {
@@ -87,6 +101,27 @@ a.dash-buttons {
   border: solid 3px #29909f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+}
+
+/* MATCHES STYLING */
+
+h2.label {
+  font-size: 25px;
+  color: black;
+}
+
+i.dog-name {
+  font-size: 25px;
+  font-style: normal;
+}
+
+.card {
+  margin: 15px;
+  padding: 15px;
+}
+
+img.dog-photo {
+  width: 25%;
 }
 
 /* Fix form orientation */
