@@ -16,12 +16,11 @@ main {
   flex: 1 0 auto; /* allows the content to grow but not shrink */
 }
 
-nav {
+.navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
   font-size: 25px;
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
