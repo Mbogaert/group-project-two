@@ -45,7 +45,7 @@ async function signupFormHandler(event) {
                     .catch (function(error) {
                         console.log('FAILED...', error);
                     });
-      // location.reload();
+      location.reload();
       console.log("success")
     } else {
       alert(response.statusText);
