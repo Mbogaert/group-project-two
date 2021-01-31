@@ -6,6 +6,14 @@
 
 body {
   background-image: url(../images/paws.jpg);
+  display: flex;
+  flex-direction: column; /* creates rows out of the elements main and footer */
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1 0 auto; /* allows the content to grow but not shrink */
 }
 
 nav {
@@ -17,7 +25,7 @@ nav {
   font-size: 25px;
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  color: black;
+  color: white;
 }
 
 .new-post-title {
@@ -28,22 +36,53 @@ nav {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-#forms {
-  width: 25%;
-  margin-left: 37.5%;
+div .container {
+  display: inline-block;
+  margin-top: 25%;
+}
+
+button {
+  color: #29909f;
+}
+
+button:hover {
+  background: #29909f;
+  color: white;
+  border-radius: 15px;
+  text-shadow: none;
+}
+
+a.dash-buttons {
+  font-size: 25px;
+}
+
+#form-1 {
+  width: 50%;
   color: white;
   background-color: white;
   padding: 20px;
-  border: solid 3px #556b2f;
+  border: solid 3px #29909f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+  margin: 5px;
+}
+
+#form-2 {
+  width: 50%;
+  color: white;
+  background-color: white;
+  padding: 20px;
+  border: solid 3px #29909f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 5px;
 }
 
 .new-post-form {
   color: black;
   background-color: white;
   padding: 20px;
-  border: solid 3px #556b2f;
+  border: solid 3px #29909f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
 }
@@ -73,5 +112,5 @@ header {
 footer {
   width: 100%;
   color: black;
+  height: 20px;
 }
-
