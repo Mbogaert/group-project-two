@@ -15,17 +15,17 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
 
         <div class="navbar-menu">
             <div class="navbar-start">
                 <i class="fas fa-paw fa-lg navbar-item"></i>
                 <a href="/" class="navbar-item"><strong>Plenty of Pups</strong></a>
 
-                {{#if loggedIn}}
-                <a href="/dashboard" class="navbar-item has-text-black">Dashboard</a>
-                <a href="/dashboard/new-post" class="navbar-item has-text-black">New Date</a>
-                <a href="/dashboard/results" class="navbar-item has-text-black">Dog Date Matches</a>
+                   {{!-- {{#if loggedIn}} --}}
+                <a href="/dashboard" class="navbar-item has-text-white">Dashboard</a>
+                <a href="/dashboard/new-post" class="navbar-item has-text-white">New Date</a>
+                <a href="/dashboard/results" class="navbar-item has-text-white">Dog Date Matches</a>
                 
             </div>
 
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            {{/if}}
+            {{!-- {{/if}} --}}
         </div>
     </nav>
     <br>
@@ -46,8 +46,8 @@
     </main>
     <br>
 
-    <footer class="footer">
-        <div class="content has-text-centered has-text-black">
+    <footer>
+        <div>
         <strong>We hope you enjoy your dog dates!</strong> <br>
         Made by: Emily, James, Jonah, Mat and Riley
         </div>

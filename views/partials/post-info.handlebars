@@ -1,9 +1,16 @@
-<article class="dog-match">
-    <div>
-        Dog: {{dog_name}} Energy: {{energy}} Owner: {{user.username}} <br>
-        <a href="post/{{id}}">{{title}}</a>
+<div class="card dog-match">
+    <div class="card-content">
+        <header class="title dog-name">Name: {{dog_name}} </header> 
+        <img class="dog-photo"
+        src="../images/puppy.jpg"
+        alt="photo of puppy">
+        <br>
+        <a href="post/{{id}}">{{title}}</a> 
+        <br>
+        Energy: {{energy}} 
+        Owner: {{user.username}} 
+        <br>
+       <i> {{content}} </i>
     </div>
-    <div>
-        {{content}}
     </div>
 </article>
