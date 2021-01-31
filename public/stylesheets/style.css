@@ -5,10 +5,11 @@
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../images/paws.jpg);
+  background-image: url(../images/paws.jpg);
 
   display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
   flex-direction: column; /* creates rows out of the elements main and footer */
   height: 100%;
   margin: 0;
@@ -16,6 +17,7 @@ body {
 
 main {
   flex: 1 0 auto; /* allows the content to grow but not shrink */
+  color: white;
 }
 
 .navbar {
@@ -26,19 +28,11 @@ main {
   font-size: 25px;
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  color: white;
 }
 
-.homepage-title {
+.hero {
   text-align: center;
-  font-size: 45px;
-  font-weight: bolder;
-}
-
-.site-info {
-  text-align: center;
-  font-size: 25px;
-  font-weight: bold;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
 .new-post-title {
@@ -73,24 +67,22 @@ a.dash-buttons {
 
 #form-1 {
   width: 50%;
-  color: white;
-  background-color: white;
   padding: 20px;
-  border: solid 3px #29909f;
+  border: solid 3px yellow;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
+  border-radius: 0 0 4px 4px;
   margin: 5px;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
 #form-2 {
   width: 50%;
-  color: white;
-  background-color: white;
   padding: 20px;
-  border: solid 3px #29909f;
+  border: solid 3px yellow;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
+  border-radius: 0 0 4px 4px;
   margin: 5px;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
 /* NEW DATE FORM STYLE */
@@ -147,7 +139,6 @@ header {
   padding-bottom: 130px;
 } /* FOOTER HEIGHT */
 footer {
+  text-align: center;
   width: 100%;
-  color: black;
-  height: 20px;
 }
