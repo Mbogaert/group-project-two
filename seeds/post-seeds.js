@@ -2,9 +2,8 @@ const { Post } = require("../models");
 
 const postdata = [
   {
-    title: "Donec posuere metus vitae ipsum.",
-    content:
-      "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+    title: "My name is scout, come play with me!",
+    content: "I have a lot of energy so bring all your best toys!",
     user_id: 10,
     dog_name: "Scout",
     energy: "High Energy",

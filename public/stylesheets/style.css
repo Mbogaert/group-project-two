@@ -6,18 +6,33 @@
 
 body {
   background-image: url(../images/paws.jpg);
+
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column; /* creates rows out of the elements main and footer */
+  height: 100%;
+  margin: 0;
 }
 
-nav {
+main {
+  flex: 1 0 auto; /* allows the content to grow but not shrink */
+  color: white;
+}
+
+.navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
   font-size: 25px;
   font-weight: bold;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  color: black;
+}
+
+.hero {
+  text-align: center;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 
 .new-post-title {
@@ -28,24 +43,77 @@ nav {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-#forms {
-  width: 25%;
-  margin-left: 37.5%;
-  color: white;
-  background-color: white;
-  padding: 20px;
-  border: solid 3px #556b2f;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
+div .container {
+  display: inline-block;
+  margin-top: 25%;
 }
 
+button {
+  color: #29909f;
+}
+
+button:hover {
+  background: #29909f;
+  color: white;
+  border-radius: 15px;
+  text-shadow: none;
+}
+
+a.dash-buttons {
+  font-size: 25px;
+}
+
+/* HOMEPAGE SIGN UP FORM*/
+
+#form-1 {
+  width: 50%;
+  padding: 20px;
+  border: solid 3px yellow;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 4px 4px;
+  margin: 5px;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+#form-2 {
+  width: 50%;
+  padding: 20px;
+  border: solid 3px yellow;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 4px 4px;
+  margin: 5px;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* NEW DATE FORM STYLE */
 .new-post-form {
   color: black;
   background-color: white;
   padding: 20px;
-  border: solid 3px #556b2f;
+  border: solid 3px #29909f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+}
+
+/* MATCHES STYLING */
+
+h2.label {
+  font-size: 25px;
+  color: black;
+}
+
+i.dog-name {
+  font-size: 25px;
+  font-style: normal;
+}
+
+.card {
+  margin: 15px;
+  padding: 15px;
+}
+
+img.dog-photo {
+  width: 25%;
 }
 
 /* Fix form orientation */
@@ -71,8 +139,8 @@ header {
   padding-bottom: 130px;
 } /* FOOTER HEIGHT */
 footer {
+  text-align: center;
   width: 100%;
-  color: black;
 }
 
 

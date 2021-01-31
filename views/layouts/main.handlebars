@@ -16,17 +16,25 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
 
         <div class="navbar-menu">
             <div class="navbar-start">
                 <i class="fas fa-paw fa-lg navbar-item"></i>
                 <a href="/" class="navbar-item"><strong>Plenty of Pups</strong></a>
 
+<<<<<<< HEAD
                 {{#if loggedIn}}
                 <a href="/dashboard" class="navbar-item has-text-black">Dashboard</a>
                 <a href="/dashboard/new-post" class="navbar-item has-text-black">New Date</a>
                 <a href="/dashboard/results" class="navbar-item has-text-black">Dog Date Matches</a>
+=======
+                   {{!-- {{#if loggedIn}} --}}
+                <a href="/dashboard" class="navbar-item has-text-white">Dashboard</a>
+                <a href="/dashboard/new-post" class="navbar-item has-text-white">New Date</a>
+                <a href="/dashboard/results" class="navbar-item has-text-white">Dog Date Matches</a>
+                
+>>>>>>> e486e5db972ec7a791838d9f12111c66b6c37081
             </div>
 
             <div class="navbar-end">
@@ -37,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            {{/if}}
+            {{!-- {{/if}} --}}
         </div>
     </nav>
     <br>
