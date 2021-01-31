@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
     return;
   }
   
-  res.render('homepage');
+  res.render('homepage', {
+    EMAIL_SECRET: process.env.EMAIL_SECRET
+  });
 });
 
 router.get('/login', (req, res) => {
