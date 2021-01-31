@@ -41,6 +41,10 @@ async function signupFormHandler(event) {
     });
     // check the response status
     if (response.ok) {
+      await emailjs.sendForm('plenty_of_pups', 'plenty_of_pups_welcome', this)
+                    .catch (function(error) {
+                        console.log('FAILED...', error);
+                    });
       location.reload();
       console.log("success")
     } else {
