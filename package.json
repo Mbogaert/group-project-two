@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Mbogaert/group-project-two#readme",
   "dependencies": {
+    "@glidejs/glide": "github:glidejs/glide",
     "bcrypt": "^5.0.0",
     "bulma": "^0.9.1",
     "connect-session-sequelize": "^7.1.0",
