@@ -1,16 +1,29 @@
 <section class="container">
-    <div class="row">
-        <div class="is-half">
-    <h2 class="label">High Energy</h2>
-    {{!-- filter the posts with your dog characteristics  --}}
-    <ul class="post-list">
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post }}
-        </li>
-        {{/each}}
-    </ul>
+    <div class="glide has-justify-content-center">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                {{#each posts as |post|}}
+                <li class="glide__slide">{{> post-info post}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="glide">
+
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left button is-success" data-glide-dir="<">prev</button>
+                <button class="glide__arrow glide__arrow--right button is-success" data-glide-dir=">">next</button>
+            </div>
+        </div>
     </div>
     </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+        const config = {
+            type: "carousel",
+            perView: 1
+        };
+        new Glide(".glide", config).mount();
+    </script>
     <div><a href="/dashboard/"><button class="button is-success" type="submit">Back to Dash</button></a></div>
 </section>

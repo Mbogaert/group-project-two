@@ -43,10 +43,10 @@ main {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-div .container {
+/* div .container {
   display: inline-block;
   margin-top: 25%;
-}
+} */
 
 button {
   color: #29909f;
@@ -107,10 +107,10 @@ i.dog-name {
   font-style: normal;
 }
 
-.card {
+/* .card {
   margin: 15px;
   padding: 15px;
-}
+} */
 
 img.dog-photo {
   width: 25%;
@@ -135,9 +135,7 @@ header {
 #page {
   position: relative;
 }
-#content {
-  padding-bottom: 130px;
-} /* FOOTER HEIGHT */
+ /* FOOTER HEIGHT */
 footer {
   text-align: center;
   width: 100%;
