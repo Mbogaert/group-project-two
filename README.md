@@ -18,7 +18,7 @@ JavaScript, Node, HTML, CSS, Express, Handlebars, Sequelize, MySql2, JawsDB, Her
 [Repository Link](https://github.com/Mbogaert/group-project-two)
 
 ## Heroku
-[Heroku Link]()
+[Heroku Link](https://immense-coast-52607.herokuapp.com/)
 
 ## Screenshot
 ![Screenshot of the website that is created]()
