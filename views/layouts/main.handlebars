@@ -22,10 +22,10 @@
                 <i class="fas fa-paw fa-lg navbar-item"></i>
                 <a href="/" class="navbar-item"><strong>Plenty of Pups</strong></a>
 
-                   {{!-- {{#if loggedIn}} --}}
-                <a href="/dashboard" class="navbar-item has-text-white">Dashboard</a>
-                <a href="/dashboard/new-post" class="navbar-item has-text-white">New Date</a>
-                <a href="/dashboard/results" class="navbar-item has-text-white">Dog Date Matches</a>
+                   {{#if loggedIn}}
+                <a href="/dashboard" class="navbar-item">Dashboard</a>
+                <a href="/dashboard/new-post" class="navbar-item">New Date</a>
+                <a href="/dashboard/results" class="navbar-item">Dog Date Matches</a>
                 
             </div>
 
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            {{!-- {{/if}} --}}
+            {{/if}}
         </div>
     </nav>
     <br>
