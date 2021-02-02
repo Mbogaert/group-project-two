@@ -1,19 +1,45 @@
-<section class="container">
-    <div class="row">
-        <div class="is-half">
-    <h2 class="label">View All Post or Filter by Your Dogs Energy Level</h2>
-    <a href="/dashboard/high-energy"><button class="button is-success" type="submit">High Energy</button></a> 
-    <a href="/dashboard/in-between"><button class="button is-success" type="submit">In Between</button></a>
-    <a href="/dashboard/mellow"><button class="button is-success" type="submit">Mellow</button></a>
-    {{!-- filter the posts with your dog characteristics  --}}
-    <ul class="post-list">
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post }}
-        </li>
-        {{/each}}
-    </ul>
+<section class="hero">
+    <div class="hero-head">
+        <div class="row">
+            <div class="is-half">
+                <h2 class="title is-4">View All Post or Filter by Your Dogs Energy Level</h2>
+                <a href="/dashboard/high-energy"><button class="button is-success" type="submit">High
+                        Energy</button></a>
+                <a href="/dashboard/in-between"><button class="button is-success" type="submit">In Between</button></a>
+                <a href="/dashboard/mellow"><button class="button is-success" type="submit">Mellow</button></a>
+                {{!-- filter the posts with your dog characteristics --}}
+            </div>
+        </div>
+    </div>
+    <div class="hero-body">
+        <div class="hero-content">
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        {{#each posts as |post|}}
+                        <li class="glide__slide">{{> post-info post}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="glide">
+                     <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left button is-success"
+                            data-glide-dir="<">prev</button>
+                        <button class="glide__arrow glide__arrow--right button is-success"
+                            data-glide-dir=">">next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+        const config = {
+            type: "carousel",
+            perView: 1
+        };
+        new Glide(".glide", config).mount();
+    </script>
     </div>
     </div>
-
 </section>
