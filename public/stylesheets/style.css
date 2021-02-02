@@ -122,6 +122,10 @@ header {
   height: 100%;
 }
 
+.comment {
+  color: black;
+}
+
 #page {
   position: relative;
 }
