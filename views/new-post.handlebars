@@ -1,0 +1,70 @@
+<section class="container">
+  <div class="row">
+    <div class="is-half">
+      <h3 class="new-post-title">Create New Post</h3>
+      <br>
+      <form class="new-post-form">
+        <div>
+          <label class="label" for="dog-name">Dog Name</label>
+          <input class="input" type="text" id="dog-name" name="dog-name" placeholder="enter dog name here" required/>
+        </div>
+        <br>
+        {{!-- photo upload will go here, need to figure out first --}}
+        <div>
+          <label class="label" for="dog-breed">Dog Breed</label>
+          <input class="input" type="text" id="dog-breed" name="dog-breed" placeholder="enter dog breed here" required/>
+        </div>
+        <br>
+        <div>
+          {{!-- match based on this characteristic --}}
+          <label class="label">This Dog is (select one):</label class="label">
+          <input type="radio" id="high-energy" name="dog-energy" value="High Energy" required>
+          <label for="high-energy">High Energy</label><br>
+          <input type="radio" id="in-between" name="dog-energy" value="In Between">
+          <label for="in-between">In Between</label><br>
+          <input type="radio" id="mellow" name="dog-energy" value="Mellow">
+          <label for="mellow">Mellow</label><br>
+        </div>
+        {{!-- ask these questions, but don't match yet --}}
+        <br>
+        <div>
+          <label class="label">This Dog is vaccinated (select one):</label>
+          <input type="radio" id="yes-vacc" name="dog-vacc" value="Yes" required>
+          <label for="yes">Yes</label><br>
+          <input type="radio" id="some-vacc" name="dog-vacc" value="Some">
+          <label for="some">Some</label><br>
+          <input type="radio" id="no-vacc" name="dog-vacc" value="No">
+          <label for="no">No</label><br>
+        </div>
+        {{!-- Does your dog like going to dog parks or would rather have a play date at home? --}}
+        <br>
+        <div>
+          <label class="label">Would you like to have any interaction with this dogs human during the dog date?</label>
+          <input type="radio" id="yes-human" name="interaction" value="Yes" required>
+          <label for="yes">Yes</label><br>
+          <input type="radio" id="some-human" name="interaction" value="Some">
+          <label for="some">Some</label><br>
+          <input type="radio" id="no-human" name="interaction" value="No">
+          <label for="no">No</label><br>
+        </div>
+        <br>
+        <div>
+          <label for="post-title" class="label">Title/Where</label>
+          <input class="input" type="text" id="post-title" name="post-title"
+            placeholder="Where and when do you want to meet should go here" required/>
+        </div>
+        <br>
+        <div>
+          <label for="post-content" class="label">Content</label>
+          <input class="input" id="post-content" name="post-content"
+            placeholder="details about your playdate should go here!" required/>
+        </div>
+        {{!-- something where they select which dog this is for (after MVP maybe) --}}
+        <br>
+        <button type="submit" class="button is-success">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="/javascript/add-post.js"></script>
