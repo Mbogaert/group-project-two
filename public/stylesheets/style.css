@@ -6,7 +6,6 @@
 
 body {
   background-image: url(../images/paws.jpg);
-
   display: flex;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,7 +31,7 @@ main {
 
 .hero {
   text-align: center;
-  text-shadow: 4px 3px 0px black, 9px 8px 0px rgba(0, 0, 0, 0.15);
+  /* text-shadow: 4px 3px 0px black, 9px 8px 0px rgba(0, 0, 0, 0.15); */
 }
 
 .new-post-title {
@@ -40,13 +39,13 @@ main {
   color: white;
   text-align: center;
   font-size: 35px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
 }
 
-div .container {
+/* div .container {
   display: inline-block;
   margin-top: 25%;
-}
+} */
 
 button {
   color: #29909f;
@@ -87,20 +86,20 @@ a.dash-buttons {
 
 /* MATCHES STYLING */
 
-h2.label {
+/* h2.label {
   font-size: 25px;
   color: black;
-}
+} */
 
 i.dog-name {
   font-size: 25px;
   font-style: normal;
 }
 
-.card {
+/* .card {
   margin: 15px;
   padding: 15px;
-}
+} */
 
 img.dog-photo {
   width: 25%;
@@ -129,9 +128,10 @@ header {
 #page {
   position: relative;
 }
-#content {
+/* #content {
   padding-bottom: 130px;
-} /* FOOTER HEIGHT */
+}  */
+/* FOOTER HEIGHT */
 footer {
   text-align: center;
   width: 100%;
