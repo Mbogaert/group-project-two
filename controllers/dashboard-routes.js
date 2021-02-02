@@ -20,7 +20,10 @@ router.get("/results", withAuth, (req, res) => {
       'title',
       'content',
       'dog_name',
-      'energy'
+      'energy',
+      'breed',
+      'human_interaction',
+      'vaccine'
     ],
     include: [
       {
@@ -57,7 +60,10 @@ router.get('/post/:id', withAuth, (req, res) => {
       'title',
       'content',
       'dog_name',
-      'energy'
+      'energy',
+      'breed',
+      'human_interaction',
+      'vaccine'
     ],
     include: [
       {
@@ -98,7 +104,8 @@ router.get("/high-energy", withAuth, (req, res) => {
       'title',
       'content',
       'dog_name',
-      'energy'
+      'energy',
+      'breed'
     ],
     include: [
       {
@@ -135,7 +142,8 @@ router.get("/in-between", withAuth, (req, res) => {
       'title',
       'content',
       'dog_name',
-      'energy'
+      'energy',
+      'breed'
     ],
     include: [
       {
@@ -172,7 +180,8 @@ router.get("/mellow", withAuth, (req, res) => {
       'title',
       'content',
       'dog_name',
-      'energy'
+      'energy',
+      'breed'
     ],
     include: [
       {

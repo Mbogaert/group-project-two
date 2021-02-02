@@ -20,7 +20,7 @@ async function commentFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      location.reload();
     } else {
       alert(response.statusText);
     }
