@@ -39,7 +39,7 @@ main {
   color: white;
   text-align: center;
   font-size: 35px;
-  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* div .container {
@@ -103,6 +103,13 @@ i.dog-name {
 
 img.dog-photo {
   width: 25%;
+}
+
+#single-post-image {
+  width: 50%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Fix form orientation */

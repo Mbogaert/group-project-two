@@ -1,16 +1,22 @@
 <div class="container has-text-centered">
     <div class="column is-centered">
-        <div class="column is-4">
+        <div class="column">
             <div class="card">
                 <div class="content">
-                    <p class="title is-4"><a href="post/{{id}}" class="title is-4"> {{dog_name }}</a></p>
+                    <br>
+                    <p class="title is-4"> A Date With {{dog_name }}</p>
+                    <br>
                     <p class="subtitle">Looking For: {{title}}</p>
                 </div>
                 <div class="card-image">
-                    <figure class="image is-4by3">
+                    <figure class="image" id="single-post-image">
                         <img src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg">
                     </figure>
                 </div>
+                                <div>
+                  <p>{{content}}</p>
+                </div>
+                <br>
                 <div class="media-content">
                     <p class="title is-6"> Owner: {{user.username}} </p>
                 </div>
@@ -20,7 +26,10 @@
                 <div class="content">
                     <p>Breed: {{breed}}</p>
                     <p>Energy Level: {{energy}}</p>
+                    <p>Vaccination Status: {{vaccine}}</p>
+                    <p>Human Interaction: {{human_interaction}}</p>
                 </div>
+
             </div>
         </div>
     </div>
